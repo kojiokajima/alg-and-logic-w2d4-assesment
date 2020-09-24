@@ -4,42 +4,32 @@
 
 // you may use methods for this. 
 
-let arr1 = [4, 78, 54, 34, 2, 8, 45, 77, 99, 23, 567, 6, 7]
+let arr1 = [4, 78, 54, 34, 2, 8,         45,    77, 99, 23, 567, 6, 7]
 
-let arr2 = [56, 98, 65, 3, 4, 58, 68, 90, 12, 34, 45]
+let arr2 = [56, 98, 65, 3, 4,  58,    68, 90, 12, 34, 45]
 
 
 const halfSorted = function (arr) {
+  let length = arr.length;
+  let halfLength = Math.floor(arr.length / 2) + 1;
 
-  let first = function (arr) {
-    let firstArray = [];
+  const getSortedHalf = function(arr, j, k) {
+    let originalArray = [];
 
-    for (let i = 0; i < Math.floor(arr.length / 2); i++) {
-      firstArray.push(arr[i]);
+    for (let i = j; i < k; i++) {
+      originalArray.push(arr[i]);
     }
 
-    let sortedFirstHalf = firstArray.sort((a, b) => a - b);
+    let sortedArray = originalArray.sort((a, b) => j === 0 ? a - b : b - a);
 
-    return sortedFirstHalf;
+    return sortedArray;
   }
-  let firstHalf = first(arr);
 
-  let second = function (arr) {
-    let secondArray = [];
-    
-    for (let i = Math.floor(arr.length / 2); i < arr.length; i++) {
-      secondArray.push(arr[i]);
-    }
-
-    let sortedSecondHalf = secondArray.sort((a, b) => b - a);
-
-    return sortedSecondHalf;
-  }
-  let secondHalf = second(arr);
+  let firstHalf = getSortedHalf(arr, 0, halfLength);
+  let secondHalf = getSortedHalf(arr, halfLength, length);
 
   return firstHalf.concat(secondHalf);
 }
-
 
 console.log(halfSorted(arr1));
 
