@@ -8,8 +8,6 @@ let arr2 = [56, 98, 65, 3, 4, 58, 68, 90, 12, 34, 45];
 
 
 const insertionSort = function (arr) {
-  // let sorted = arr[0];
-  // let numOfSorted = 1;
 
   for (let i = 1; i < arr.length; i++) {
 
@@ -18,11 +16,9 @@ const insertionSort = function (arr) {
       if (arr[i] < arr[j]) {
         let current = arr[i];
         for (let k = i - 1; k >= j; k--) {
-          // console.log(k);
           arr[k + 1] = arr[k];
         }
         arr[j] = current;
-        // console.log(arr);
       }
 
     }
@@ -34,8 +30,3 @@ const insertionSort = function (arr) {
 console.log(insertionSort(arr1));
 
 console.log(insertionSort(arr2));
-
-
-// call the first element 'sorted'
-// look at the next  unsorted element
-// insert into the sorted portion

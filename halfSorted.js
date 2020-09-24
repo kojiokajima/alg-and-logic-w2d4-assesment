@@ -4,24 +4,10 @@
 
 // you may use methods for this. 
 
-// 13 elements
 let arr1 = [4, 78, 54, 34, 2, 8, 45, 77, 99, 23, 567, 6, 7]
 
-// 11 elements
 let arr2 = [56, 98, 65, 3, 4, 58, 68, 90, 12, 34, 45]
 
-
-// const halfSorted = function (arr) {
-
-//   let firstHalf = arr.slice(0, Math.floor(arr.length / 2));
-//   let secondHalf = arr.slice(Math.floor(arr.length / 2) + 1);
-
-//   let sortedFirstHalf = firstHalf.sort((a, b) => a - b);
-//   let sortedSecondHalf = secondHalf.sort((a, b) => b - a);
-
-//   return firstHalf.concat(secondHalf);
-
-// };
 
 const halfSorted = function (arr) {
 
