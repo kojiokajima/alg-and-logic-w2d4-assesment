@@ -7,10 +7,35 @@ let arr1 = [4, 78, 54, 34, 2, 8, 45, 77, 99, 23, 567, 6, 7];
 let arr2 = [56, 98, 65, 3, 4, 58, 68, 90, 12, 34, 45];
 
 
-const insertionSort = function(arr) {
+const insertionSort = function (arr) {
+  // let sorted = arr[0];
+  // let numOfSorted = 1;
 
+  for (let i = 1; i < arr.length; i++) {
+
+    for (let j = 0; j < i; j++) {
+
+      if (arr[i] < arr[j]) {
+        let current = arr[i];
+        for (let k = i - 1; k >= j; k--) {
+          // console.log(k);
+          arr[k + 1] = arr[k];
+        }
+        arr[j] = current;
+        // console.log(arr);
+      }
+
+    }
+
+  }
+  return arr;
 };
 
 console.log(insertionSort(arr1));
 
 console.log(insertionSort(arr2));
+
+
+// call the first element 'sorted'
+// look at the next  unsorted element
+// insert into the sorted portion
